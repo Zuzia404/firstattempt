@@ -11,7 +11,7 @@
         '<h2>Your posts</h2>'+
         '<section id="yournewposts"></section>'+
         '<br>'+
-        '<form onsubmit="return posting();return false">'+
+        '<form onsubmit="return posting();return false;">'+
             '<input type="text" id="post" placeholder="Type what you want to share here...">'+
             '<input type="submit" value="Post" id="formend">'+
         '</form>'+
@@ -42,14 +42,20 @@
             elem.parentNode.removeChild(elem);
             return false;
         }
+
     </script>
 </head>
 <body id="bod">
     <section id="pickuser">
         <h1>socially-neutral</h1>
         <hr>
+        <h2>New profile</h2>
         <form onsubmit="return usernamesetting();return false">
         <input type="text" id="username" placeholder="Insert username">
+        <br>
+        <input type="email" id="email" placeholder="Insert email adress">
+        <br>
+        <br>
         <input type="submit" value="Enter">
         </form>
     </section>
