@@ -1,0 +1,23 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 800px;
+    margin:auto;
+    background-color: antiquewhite;
+    color: antiquewhite;
+}
+div {
+    background-color: rgb(34, 35, 30);
+    padding: 40px;
+}
+input {
+    font-size: 1em;
+    background-color: antiquewhite;
+}
+#post {
+    height: 1.7em;
+    width: 600px;
+}
+#formend {
+    width: 4em;
+    height: 2em;
+}
