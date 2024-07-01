@@ -28,6 +28,12 @@ input {
     width: 5em;
     color: rgb(128, 128, 120);
 }
+span {
+    font-size: 0.75em;
+    height: 0.5em;
+    width: 5em;
+    color: rgb(128, 128, 120);
+}
 #pickuser {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 40px;

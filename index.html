@@ -8,7 +8,7 @@
     <script type="application/javascript">
         var site = '<h1>socially-neutral</h1>'+
         '<hr>'+
-        '<h2>Your posts</h2>'+
+        '<h2>Your posts (sorted by highest ratings)</h2>'+
         '<section id="yournewposts"></section>'+
         '<br>'+
         '<form onsubmit="return posting();return false;">'+
@@ -20,7 +20,8 @@
         var username = "[Blank]"
         var post = "[Blank]"
         var rating = '<label class="stars">How do you rate this post?</label>' +
-        '<input type="range" min="1" max="=5" class="stars">';
+        '<input type="range" min="0" max="100" value="50" oninput="updateValue(this)" class="stars">'+
+        '<span class="rangeValue">50</span>';
         var today = new Date();
         var day = String(today.getDate()).padStart(2, '0');
         var month = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -42,7 +43,25 @@
             elem.parentNode.removeChild(elem);
             return false;
         }
+        function updateValue(rangeInput) {
+            const section = rangeInput.closest('section');
+            const value = rangeInput.value;
+            section.dataset.value = value;
+            section.querySelector('.rangeValue').textContent = value;
+            sortSections();
+        }
+        function sortSections() {
+            const container = document.getElementById('yournewposts');
+            const sections = Array.from(container.querySelectorAll('section'));
 
+            sections.sort((a, b) => {
+            return b.dataset.value - a.dataset.value;
+            });
+
+                sections.forEach(section => {
+                container.appendChild(section);
+            });
+        }
     </script>
 </head>
 <body id="bod">
