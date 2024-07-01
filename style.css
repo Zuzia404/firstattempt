@@ -1,6 +1,6 @@
 body {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 65%;
+    width: 75%;
     margin:auto;
     background-color: antiquewhite;
     color: antiquewhite;
@@ -15,7 +15,7 @@ input {
 }
 #post {
     height: 1.7em;
-    width: 90%;
+    width: 80%;
 }
 #formend {
     width: 8%;
