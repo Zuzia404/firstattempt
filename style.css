@@ -26,3 +26,10 @@ input {
     height: 0.5em;
     width: 5em;
 }
+#pickuser {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px;
+    width: 300px;
+    margin: auto;
+    background-color:rgb(34, 35, 30);
+}
