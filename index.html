@@ -6,25 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>socially-neutral</title>
     <script type="application/javascript">
+        var site = '<h1>socially-neutral</h1>'+
+        '<h2>Your posts</h2>'+
+        '<section id="yournewposts"></section>'+
+        '<form onsubmit="return posting();return false">'+
+            '<input type="text" id="post" placeholder="Type what you want to share here...">'+
+            '<input type="submit" value="Post" id="formend">'+
+        '</form>';
+        var username = "[Blank]"
+        var post = "[Blank]"
         function posting(){
-            var post = document.getElementById("post");
+            post = document.getElementById("post");
             const para = document.createElement("section");
-            para.innerHTML = "<hr>" + post.value + "<hr>";
+            para.innerHTML = "<hr>" + "<strong>" + username.value + ": " + "</strong>" + post.value + "<hr>";
             document.getElementById("yournewposts").appendChild(para);
             return false
         }
+        function usernamesetting(){
+            username = document.getElementById("username");
+            const di = document.createElement("div");
+            di.innerHTML = site
+            document.getElementById("bod").appendChild(di);
+            var elem = document.getElementById("pickuser");
+            elem.parentNode.removeChild(elem);
+            return false;
+        }
     </script>
 </head>
-<body>
-    <div>
-        <h1>socially-neutral</h1>
-        <h2>Your posts</h2>
-        <section id="yournewposts">
-        </section>
-        <form onsubmit="return posting();return false">
-            <input type="text" id="post" placeholder="Type what you want to share here...">
-            <input type="submit" value="Post" id="formend">
+<body id="bod">
+    <section id="pickuser">
+        <form onsubmit="return usernamesetting();return false">
+        <input type="text" id="username" placeholder="Insert username">
+        <input type="submit" value="Enter">
         </form>
-    </div>
+    </section>
 </body>
 </html>
