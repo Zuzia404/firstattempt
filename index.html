@@ -7,12 +7,16 @@
     <title>socially-neutral</title>
     <script type="application/javascript">
         var site = '<h1>socially-neutral</h1>'+
+        '<hr>'+
         '<h2>Your posts</h2>'+
         '<section id="yournewposts"></section>'+
+        '<br>'+
         '<form onsubmit="return posting();return false">'+
             '<input type="text" id="post" placeholder="Type what you want to share here...">'+
             '<input type="submit" value="Post" id="formend">'+
-        '</form>';
+        '</form>'+
+        '<hr>'+
+        '<footer><a href="index.html">new profile</a></footer>';
         var username = "[Blank]"
         var post = "[Blank]"
         var rating = '<label class="stars">How do you rate this post?</label>' +
@@ -25,7 +29,7 @@
         function posting(){
             post = document.getElementById("post");
             const para = document.createElement("section");
-            para.innerHTML = "<hr>" + "<strong>" + username.value + "</strong>" + "  ~  " + "<em>" + today + "</em>" + "<br>" + post.value + "<br>" + rating + "<hr>";
+            para.innerHTML = "<strong>" + username.value + "</strong>" + "  ~  " + "<em>" + today + "</em>" + "<br>" + post.value + "<br>" + rating;
             document.getElementById("yournewposts").appendChild(para);
             return false
         }
@@ -42,6 +46,8 @@
 </head>
 <body id="bod">
     <section id="pickuser">
+        <h1>socially-neutral</h1>
+        <hr>
         <form onsubmit="return usernamesetting();return false">
         <input type="text" id="username" placeholder="Insert username">
         <input type="submit" value="Enter">
