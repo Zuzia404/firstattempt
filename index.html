@@ -15,10 +15,17 @@
         '</form>';
         var username = "[Blank]"
         var post = "[Blank]"
+        var rating = '<label class="stars">How do you rate this post?</label>' +
+        '<input type="range" min="1" max="=5" class="stars">';
+        var today = new Date();
+        var day = String(today.getDate()).padStart(2, '0');
+        var month = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var year = today.getFullYear();
+        today = day + '/' + month + '/' + year;
         function posting(){
             post = document.getElementById("post");
             const para = document.createElement("section");
-            para.innerHTML = "<hr>" + "<strong>" + username.value + ": " + "</strong>" + post.value + "<hr>";
+            para.innerHTML = "<hr>" + "<strong>" + username.value + "</strong>" + "  ~  " + "<em>" + today + "</em>" + "<br>" + post.value + "<br>" + rating + "<hr>";
             document.getElementById("yournewposts").appendChild(para);
             return false
         }
